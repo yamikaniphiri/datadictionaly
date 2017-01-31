@@ -1,6 +1,6 @@
 {
     "version": "0.1",
-    "name": "metadata dictionary",
+    "name": "metadata dictionary v1",
     "description": "metadata-dictionary",
     "launch_path": "index.html",
     "icons": {
@@ -9,7 +9,7 @@
         "128": "/img/seed-128x128.png"
     },
     "developer": {
-        "name": "HISP",
+        "name": "HISP"
         
     },
     "default_locale": "en",
