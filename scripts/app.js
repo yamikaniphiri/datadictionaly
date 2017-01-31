@@ -23,6 +23,15 @@ var appSeed = angular.module('appSeed',
 	$routeProvider.when('/', {
         templateUrl: 'views/home.html',
         controller: 'MainController'
+    }).when('/dataElements', {
+        templateUrl: 'views/metadata-list.html',
+        controller: 'dataElementsController'
+    }).when('/indicators', {
+        templateUrl: 'views/metadata-list.html',
+        controller: 'indicatorsController'
+    }).when('/DataSets', {
+        templateUrl: 'views/metadata-list.html',
+        controller: 'DataSetsController'
     }).otherwise({
         redirectTo : '/'
     });
