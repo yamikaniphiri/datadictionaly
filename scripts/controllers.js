@@ -13,6 +13,8 @@ var appSeedControllers = angular.module('appSeedControllers', [])
         .controller('dataElementsController', function ($scope, dataElement, $routeParams, $window, ModalService) {
             $scope.title = "Data Elements";
             var apiResource = "dataElements";
+            $scope.grouped = true;
+            $scope.apiname = apiResource;
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
 
                 $scope.result = alldataelements;
@@ -23,6 +25,8 @@ var appSeedControllers = angular.module('appSeedControllers', [])
         .controller('indicatorsController', function ($scope, $routeParams, dataElement, $window, ModalService) {
             $scope.title = "Indicators";
             var apiResource = "indicators";
+            $scope.grouped = true;
+            $scope.apiname = apiResource;
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
                 $scope.result = alldataelements;
 
@@ -33,6 +37,7 @@ var appSeedControllers = angular.module('appSeedControllers', [])
         .controller('DataSetsController', function ($scope, $routeParams, dataElement, $window, ModalService) {
             $scope.title = "Data Sets";
             var apiResource = "dataSets";
+            $scope.apiname = apiResource;
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
 
                 $scope.result = alldataelements;
