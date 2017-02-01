@@ -15,9 +15,14 @@ var appSeedControllers = angular.module('appSeedControllers', [])
             var apiResource = "dataElements";
             $scope.grouped = true;
             $scope.apiname = apiResource;
+            $scope.groupTitle = "Data element Groups";
+            var apiGroupResource = "dataElementGroups";
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
-
                 $scope.result = alldataelements;
+
+            });
+            dataElement.listAllMetadata(apiGroupResource).then(function (alldataelements) {
+                $scope.Groupresult = alldataelements;
 
             });
         })
@@ -27,8 +32,15 @@ var appSeedControllers = angular.module('appSeedControllers', [])
             var apiResource = "indicators";
             $scope.grouped = true;
             $scope.apiname = apiResource;
+            $scope.groupTitle = "Indicator Groups";
+            var apiGroupResource = "indicatorGroups";
+            
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
                 $scope.result = alldataelements;
+
+            });
+            dataElement.listAllMetadata(apiGroupResource).then(function (alldataelements) {
+                $scope.Groupresult = alldataelements;
 
             });
 
