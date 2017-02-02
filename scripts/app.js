@@ -43,6 +43,18 @@ var appSeed = angular.module('appSeed',
             }).when('/dataElements/:id', {
                 templateUrl: 'views/metadata-list.html',
                 controller: 'dataElementsController'
+            }).when('/programs', {
+                templateUrl: 'views/metadata-list.html',
+                controller: 'programsController'
+            }).when('/programs/:id', {
+                templateUrl: 'views/metadata-list.html',
+                controller: 'programsController'
+            }).when('/organisationUnits', {
+                templateUrl: 'views/metadata-list.html',
+                controller: 'organisationUnitsController'
+            }).when('/organisationUnits/:id', {
+                templateUrl: 'views/metadata-list.html',
+                controller: 'organisationUnitsController'
             }).otherwise({
                 redirectTo: '/'
             });
@@ -51,6 +63,3 @@ var appSeed = angular.module('appSeed',
             $translateProvider.useSanitizeValueStrategy('escaped');
             $translateProvider.useLoader('i18nLoader');
         });
-
-
-
