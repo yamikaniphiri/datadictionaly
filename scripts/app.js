@@ -46,12 +46,15 @@ var appSeed = angular.module('appSeed',
             }).when('/programs', {
                 templateUrl: 'views/metadata-list.html',
                 controller: 'programsController'
+            }).when('/programs/:id', {
+                templateUrl: 'views/metadata-list.html',
+                controller: 'programsController'
             }).when('/organisationUnits', {
                 templateUrl: 'views/metadata-list.html',
                 controller: 'organisationUnitsController'
-            }).when('/other', {
+            }).when('/organisationUnits/:id', {
                 templateUrl: 'views/metadata-list.html',
-                controller: 'otherController'
+                controller: 'organisationUnitsController'
             }).otherwise({
                 redirectTo: '/'
             });
