@@ -15,6 +15,7 @@ var appSeed = angular.module('appSeed',
             'd2Controllers',
             'pascalprecht.translate',
             'd2HeaderBar',
+            //pagination
             'angularUtils.directives.dirPagination'
         ])
 

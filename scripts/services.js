@@ -14,8 +14,10 @@ appSeedServices.factory('dataElement', ['$http', '$q', function ($http, $q) {
             //var url ='https://dhis.cc.ac.mw/dhis/api/dataElements.json?fields=name,id';
 
             listAllMetadata: function (apiResource) {
-                var url = 'https://dhis.cc.ac.mw/dhis/api/'+apiResource+'.json?fields=name,id' ;
+                var url = 'https://dhis.cc.ac.mw/dhis/api/'+apiResource+'.json?fields=name,id&paging=false' ;
                 console.log("proflie metadata "+url);
+                
+                //promise to get all the metadata??
                 var def = $q.defer();
                 $http.get(url)
                     .success(function (res) {
@@ -27,7 +29,7 @@ appSeedServices.factory('dataElement', ['$http', '$q', function ($http, $q) {
             }
             ,
             specificMetadata: function (apiResource, id) {
-                var url = 'https://dhis.cc.ac.mw/dhis/api/'+apiResource+'/'+id+'.json?fields=:all' ;
+                var url = 'https://dhis.cc.ac.mw/dhis/api/'+apiResource+'/'+id+'.json?fields=:allpaging=false' ;
                 console.log("proflie metadata "+url);
                 var def = $q.defer();
                 $http.get(url)
@@ -40,7 +42,7 @@ appSeedServices.factory('dataElement', ['$http', '$q', function ($http, $q) {
 
             }
         };
-        console.log(JSON.stringify(dataElementMgr));
+        
         return dataElementMgr;
 
 

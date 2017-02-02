@@ -5,22 +5,30 @@
 /* Controllers */
 var appSeedControllers = angular.module('appSeedControllers', [])
 
+//home page controller
         .controller('MainController', function ($scope, $routeParams, $window, ModalService) {
             $scope.title = 'Meta Data Dictionary';
 
         })
+        
+        //data elements controller
 
         .controller('dataElementsController', function ($scope, dataElement, $routeParams, $window, ModalService) {
+            //title on the page
             $scope.title = "Data Elements";
+            //valeu used to make the api call
             var apiResource = "dataElements";
+            
             $scope.grouped = true;
             $scope.apiname = apiResource;
             $scope.groupTitle = "Data element Groups";
             var apiGroupResource = "dataElementGroups";
+            //calling a service to get all the data elements
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
                 $scope.result = alldataelements;
 
             });
+            //calling a service to sget all the data element groups
             dataElement.listAllMetadata(apiGroupResource).then(function (alldataelements) {
                 $scope.Groupresult = alldataelements;
 
