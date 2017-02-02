@@ -34,7 +34,7 @@ var appSeedControllers = angular.module('appSeedControllers', [])
             $scope.apiname = apiResource;
             $scope.groupTitle = "Indicator Groups";
             var apiGroupResource = "indicatorGroups";
-            
+
             dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
                 $scope.result = alldataelements;
 
@@ -56,5 +56,33 @@ var appSeedControllers = angular.module('appSeedControllers', [])
 
             });
 
-        });
+        })
 
+        .controller('programsController', function ($scope, $routeParams, dataElement,$window, ModalService) {
+            $scope.title = "Programs";
+            var apiResource = "programs";
+            $scope.apiname = apiResource;
+            dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
+
+                $scope.result = alldataelements;
+
+        });
+      })
+
+        .controller('organisationUnitsController', function ($scope, $routeParams, dataElement, $window, ModalService) {
+          $scope.title = "Organisation Units";
+          $scope.grouped = true;
+          var apiResource = "organisationUnits";
+          $scope.apiname = apiResource;
+          $scope.groupTitle = "Organisation Unit Groups";
+          var apiGroupResource = "organisationUnitGroups";
+
+          dataElement.listAllMetadata(apiResource).then(function (alldataelements) {
+
+            $scope.result = alldataelements;
+          });
+          dataElement.listAllMetadata(apiGroupResource).then(function (alldataelements) {
+
+            $scope.Groupresult = alldataelements;
+          });
+        });
